@@ -10,6 +10,9 @@ public class CardsController : MonoBehaviour
 
     private List<Sprite> spritePairs;
 
+    Card firstSelected;
+    Card secondSelected;
+
 
     private void Start()
     {
@@ -44,6 +47,34 @@ public class CardsController : MonoBehaviour
         if(card.isSelected == false)
         {
             card.Show();
+
+            if (firstSelected == null) 
+            {
+                firstSelected = card;
+                return;
+            }
+
+            if (secondSelected == null)
+            {
+                secondSelected = card;
+                StartCoroutine(CheckMatching(firstSelected, secondSelected));
+                firstSelected = null;
+                secondSelected = null;
+            }
+        }
+    }
+
+    IEnumerator CheckMatching(Card a, Card b)
+    {
+        yield return new WaitForSeconds(.3f);
+        if (a.iconSprite == b.iconSprite)
+        {
+            // Matched
+        }
+        else
+        {
+            a.Hide();
+            b.Hide();
         }
     }
 
