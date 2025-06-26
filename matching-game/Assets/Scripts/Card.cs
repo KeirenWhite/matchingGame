@@ -9,6 +9,12 @@ public class Card : MonoBehaviour
 
     public Sprite hiddenIconSprite;
     public Sprite iconSprite;
+    public CardsController controller;
+
+    public void OnCardClick()
+    {
+        controller.SetSelected(this);
+    }
 
     public bool isSelected;
 

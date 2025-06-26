@@ -10,6 +10,12 @@ public class CardsController : MonoBehaviour
 
     private List<Sprite> spritePairs;
 
+
+    private void Start()
+    {
+        PrepareSprites();
+        CreateCards();
+    }
     private void PrepareSprites()
     {
         spritePairs = new List<Sprite>();
@@ -21,6 +27,24 @@ public class CardsController : MonoBehaviour
         }
 
         ShuffleSprites(spritePairs);
+    }
+
+    void CreateCards()
+    {
+        for(int i = 0;i < spritePairs.Count;i++)
+        {
+            Card card = Instantiate(cardPrefab, gridTransform);
+            card.SetIconSprite(spritePairs[i]);
+            card.controller = this;
+        }
+    }
+
+    public void SetSelected(Card card)
+    {
+        if(card.isSelected == false)
+        {
+            card.Show();
+        }
     }
 
     void ShuffleSprites(List<Sprite> spriteList)
