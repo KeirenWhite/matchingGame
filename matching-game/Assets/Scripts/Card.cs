@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using PrimeTween;
 
 public class Card : MonoBehaviour
 {
@@ -26,13 +27,26 @@ public class Card : MonoBehaviour
 
     public void Show()
     {
-        iconImage.sprite = iconSprite;
+        Tween.Rotation(transform, new Vector3(0f, 180f, 0f), .2f);
+
+        Tween.Delay(.1f, () => iconImage.sprite = iconSprite);
+
+        //iconImage.sprite = iconSprite;
         isSelected = true;
     }
 
     public void Hide()
     {
-        iconImage.sprite = hiddenIconSprite;
-        isSelected = false;
+        Tween.Rotation(transform, new Vector3(0f, 0f, 0f), .2f);
+
+        Tween.Delay(0.1f, () => 
+        {
+            iconImage.sprite = hiddenIconSprite; 
+            isSelected = false;
+        });
+        
+
+        //iconImage.sprite = hiddenIconSprite;
+        //isSelected = false;
     }
 }
