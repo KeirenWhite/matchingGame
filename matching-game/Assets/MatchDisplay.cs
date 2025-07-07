@@ -1,18 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MatchDisplay : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] Image matchDisplay;
+    public DisplayController displayController;
 
-    // Update is called once per frame
-    void Update()
+    public Sprite displaySprite;
+
+    public void SetDisplaySprite(Sprite dsp)
     {
-        
+        matchDisplay.sprite = dsp;
     }
+    /*public void ShowDisplay()
+    {
+        matchDisplay.sprite = displaySprite;
+    }*/
 }

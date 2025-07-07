@@ -7,8 +7,10 @@ public class CardsController : MonoBehaviour
     [SerializeField] Card cardPrefab;
     [SerializeField] Transform gridTransform;
     [SerializeField] Sprite[] sprites;
-
+    public MatchDisplay matchDsp;
+    public DisplayController displayController;
     private List<Sprite> spritePairs;
+    
 
     Card firstSelected;
     Card secondSelected;
@@ -27,6 +29,7 @@ public class CardsController : MonoBehaviour
             // adding sprite 2 times to make it a pair
             spritePairs.Add(sprites[i]);
             spritePairs.Add(sprites[i]);
+            // add matchdisplay sprite here
         }
 
         ShuffleSprites(spritePairs);
@@ -70,6 +73,9 @@ public class CardsController : MonoBehaviour
         if (a.iconSprite == b.iconSprite)
         {
             // Matched
+            // show matchdisplay spire that = a or b
+            //matchDsp.ShowDisplay();
+            displayController.CreateDisplay();
         }
         else
         {
