@@ -492,6 +492,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 87547b592a25cd34d9e8fc96fcfbbd11, type: 3}
   matchDsp: {fileID: -8578407193235493290, guid: d0bfb8db8c175c8429459eb99a4057a2, type: 3}
   displayController: {fileID: 2006154463}
+  displayPrefab: {fileID: 61112064181124592, guid: d0bfb8db8c175c8429459eb99a4057a2, type: 3}
 --- !u!4 &739501542
 Transform:
   m_ObjectHideFlags: 0
@@ -774,6 +775,7 @@ MonoBehaviour:
   ogCanvas: {fileID: 2022216844}
   continueButtonPrefab: {fileID: 7085847987844961022, guid: 538f17db3a2cfea45bece0827154c9ef, type: 3}
   continueButtonTransform: {fileID: 122269270}
+  displayActive: 0
 --- !u!4 &2006154464
 Transform:
   m_ObjectHideFlags: 0

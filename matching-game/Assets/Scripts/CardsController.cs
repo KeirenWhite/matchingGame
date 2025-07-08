@@ -9,6 +9,7 @@ public class CardsController : MonoBehaviour
     [SerializeField] Sprite[] sprites;
     public MatchDisplay matchDsp;
     public DisplayController displayController;
+    public GameObject displayPrefab;
     private List<Sprite> spritePairs;
     
 
@@ -75,7 +76,9 @@ public class CardsController : MonoBehaviour
             // Matched
             // show matchdisplay spire that = a or b
             //matchDsp.ShowDisplay();
-            displayController.CreateDisplay();
+            
+            displayController.CreateDisplay(displayPrefab);
+            //displayController.displayActive = true;
         }
         else
         {

@@ -13,6 +13,8 @@ public class DisplayController : MonoBehaviour
     public GameObject ogCanvas;
     public Button continueButtonPrefab;
     public Transform continueButtonTransform;
+    public bool displayActive = false;
+    private MatchDisplay currentDisplay;
     private void Start()
     {
         PrepareDisplays();
@@ -30,7 +32,7 @@ public class DisplayController : MonoBehaviour
             // add matchdisplay sprite here
         }
     }
-    public void CreateDisplay()
+    public MatchDisplay CreateDisplay(GameObject display)
     {
         /*for (int i = 0; i < displayList.Count; i++)
         {
@@ -39,14 +41,30 @@ public class DisplayController : MonoBehaviour
             dsp.displayController = this;
             //dsp.ShowDisplay();
         }*/
-        MatchDisplay dsp = Instantiate(displayPrefab, displayGridTransform);
-        dsp.SetDisplaySprite(displaySprites[0]);
-        dsp.displayController = this;
+        
+        currentDisplay = Instantiate(displayPrefab, displayGridTransform);
+        currentDisplay.SetDisplaySprite(displaySprites[0]);
+        currentDisplay.displayController = this;
+        
+        
         ogCanvas.SetActive(false);
         Continue();
-        //continueButton.SetActive(true);
+
+        return currentDisplay;
+        
+       
+        
         
 
+    }
+
+    public void DestroyDisplay()
+    {
+        if(currentDisplay != null)
+        {
+            Destroy(currentDisplay.gameObject);
+        }
+        
     }
 
     public void Continue()
@@ -63,5 +81,9 @@ public class DisplayController : MonoBehaviour
     public void Resume()
     {
         ogCanvas.SetActive(true);
+        DestroyDisplay();
+        //displayActive = false;
+        //CreateDisplay();
+        
     }
 }
