@@ -17,6 +17,7 @@ public class CardsController : MonoBehaviour
 {
     [SerializeField] Card cardPrefab;
     [SerializeField] Transform gridTransform;
+    //[SerializeField] GameObject gridLayoutObject;
     [SerializeField] Sprite[] sprites;
     //public MatchDisplay matchDsp;
     public DisplayController displayController;
@@ -52,7 +53,8 @@ public class CardsController : MonoBehaviour
     {
         for(int i = 0; i < spritePairs.Count; i++)
         {
-            Card card = Instantiate(cardPrefab, gridTransform);
+            Card card = Instantiate(cardPrefab, gridTransform, false);
+            //LayoutRebuilder.ForceRebuildLayoutImmediate(gridLayoutObject.GetComponent<RectTransform>());
             card.SetIconSprite(spritePairs[i]);
             card.controller = this;
         }

@@ -44,7 +44,7 @@ public class DisplayController : MonoBehaviour
             //dsp.ShowDisplay();
         }*/
         
-        currentDisplay = Instantiate(displayPrefab, displayTransform);
+        currentDisplay = Instantiate(displayPrefab, displayGridTransform);
         currentDisplay.SetDisplaySprite(sprite);
         currentDisplay.SetDisplayText(text);
         currentDisplay.displayController = this;
