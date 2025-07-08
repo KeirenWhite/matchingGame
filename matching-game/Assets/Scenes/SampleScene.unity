@@ -155,6 +155,7 @@ RectTransform:
   m_Children:
   - {fileID: 155838662}
   - {fileID: 122269270}
+  - {fileID: 1079526636}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -259,7 +260,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0}
+  m_AnchoredPosition: {x: 0, y: -103}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &122269271
@@ -353,7 +354,7 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 1
+  m_ChildAlignment: 4
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 250, y: 100}
@@ -490,7 +491,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 588bf126116d36843a7b535836073b68, type: 3}
   - {fileID: 21300000, guid: 1d8b9743869c25344ae0f622cd80fa14, type: 3}
   - {fileID: 21300000, guid: 87547b592a25cd34d9e8fc96fcfbbd11, type: 3}
-  matchDsp: {fileID: -8578407193235493290, guid: d0bfb8db8c175c8429459eb99a4057a2, type: 3}
   displayController: {fileID: 2006154463}
   displayPrefab: {fileID: 61112064181124592, guid: d0bfb8db8c175c8429459eb99a4057a2, type: 3}
   spriteDisplayPairs:
@@ -499,7 +499,12 @@ MonoBehaviour:
     matchText: Batman hell yeah
   - cardIcon: {fileID: 21300000, guid: e124e5c617bbce14d929b2d4b54c5dc4, type: 3}
     matchDisplay: {fileID: 21300000, guid: 1a4b6b6937496ac4eb9e64e4739a56cb, type: 3}
-    matchText: light saber hell yeah
+    matchText: "This game isn\u2019t just played\u2014it\u2019s experienced. Whether
+      your customers are new to VR or seasoned players, Beat Saber consistently ranks
+      among the most loved and replayed titles. Recommend it with confidence\u2014it\u2019s
+      a guaranteed crowd-pleaser.   What makes it stand out? Instantly addictive
+      gameplay, perfectly, synced music & levels, full-body fun, spectacular sound
+      effects and visuals."
   - cardIcon: {fileID: 21300000, guid: 87547b592a25cd34d9e8fc96fcfbbd11, type: 3}
     matchDisplay: {fileID: 21300000, guid: 11fa3393ed3e9ba4583de45d11cd1f09, type: 3}
     matchText: wizards hell yeah
@@ -689,11 +694,42 @@ Transform:
   m_GameObject: {fileID: 822033265}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 3.71, z: 0}
+  m_LocalPosition: {x: 0.02, y: 3.71, z: 0}
   m_LocalScale: {x: 0.32189274, y: 0.32189274, z: 0.32189274}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1079526635
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1079526636}
+  m_Layer: 0
+  m_Name: DisplayTransform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1079526636
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079526635}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.5, y: 43, z: -4.5158525}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 73185844}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1900025158
 GameObject:
@@ -791,6 +827,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e124e5c617bbce14d929b2d4b54c5dc4, type: 3}
   - {fileID: 21300000, guid: e97d2e86ed7720d43997de2844be5f48, type: 3}
   displayGridTransform: {fileID: 155838662}
+  displayTransform: {fileID: 1079526636}
   ogCanvas: {fileID: 2022216844}
   continueButtonPrefab: {fileID: 7085847987844961022, guid: 538f17db3a2cfea45bece0827154c9ef, type: 3}
   continueButtonTransform: {fileID: 122269270}

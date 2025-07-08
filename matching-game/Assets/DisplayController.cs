@@ -10,6 +10,7 @@ public class DisplayController : MonoBehaviour
     [SerializeField] MatchDisplay displayPrefab;
     [SerializeField] Sprite[] displaySprites;
     [SerializeField] Transform displayGridTransform;
+    [SerializeField] Transform displayTransform;
     private List<Sprite> displayList;
     public GameObject ogCanvas;
     public Button continueButtonPrefab;
@@ -18,7 +19,7 @@ public class DisplayController : MonoBehaviour
     private MatchDisplay currentDisplay;
     private void Start()
     {
-        PrepareDisplays();
+        //PrepareDisplays();
         //CreateDisplay();
     }
 
@@ -43,7 +44,7 @@ public class DisplayController : MonoBehaviour
             //dsp.ShowDisplay();
         }*/
         
-        currentDisplay = Instantiate(displayPrefab, displayGridTransform);
+        currentDisplay = Instantiate(displayPrefab, displayTransform);
         currentDisplay.SetDisplaySprite(sprite);
         currentDisplay.SetDisplayText(text);
         currentDisplay.displayController = this;
