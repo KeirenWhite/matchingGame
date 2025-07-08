@@ -1,16 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+
+[System.Serializable]
+public class SpriteMatchDisplayPair
+{
+    public Sprite cardIcon;
+    public Sprite matchDisplay;
+    public string matchText;
+}
+
 
 public class CardsController : MonoBehaviour
 {
     [SerializeField] Card cardPrefab;
     [SerializeField] Transform gridTransform;
     [SerializeField] Sprite[] sprites;
-    public MatchDisplay matchDsp;
+    //public MatchDisplay matchDsp;
     public DisplayController displayController;
     public GameObject displayPrefab;
     private List<Sprite> spritePairs;
+    public List<SpriteMatchDisplayPair> spriteDisplayPairs;
     
 
     Card firstSelected;
@@ -38,7 +50,7 @@ public class CardsController : MonoBehaviour
 
     void CreateCards()
     {
-        for(int i = 0;i < spritePairs.Count;i++)
+        for(int i = 0; i < spritePairs.Count; i++)
         {
             Card card = Instantiate(cardPrefab, gridTransform);
             card.SetIconSprite(spritePairs[i]);
@@ -46,6 +58,31 @@ public class CardsController : MonoBehaviour
         }
     }
 
+    private Sprite GetDisplaySpriteForIcon(Sprite icon)
+    {
+        foreach (var pair in spriteDisplayPairs)
+        {
+            if (pair.cardIcon == icon)
+            {
+                return pair.matchDisplay;
+            }
+        }
+
+        return null;
+    }
+
+    private string GetDisplayTextForIcon(Sprite icon)
+    {
+        foreach (var pair in spriteDisplayPairs)
+        {
+            if (pair.cardIcon == icon)
+            {
+                return pair.matchText;
+            }
+        }
+
+        return null;
+    }
     public void SetSelected(Card card)
     {
         if(card.isSelected == false)
@@ -76,8 +113,14 @@ public class CardsController : MonoBehaviour
             // Matched
             // show matchdisplay spire that = a or b
             //matchDsp.ShowDisplay();
+            Sprite displaySprite = GetDisplaySpriteForIcon(a.iconSprite);
+            string displayText = GetDisplayTextForIcon(a.iconSprite);
+             
+            if (displaySprite != null)
+            {
+                displayController.CreateDisplay(displaySprite, displayText);
+            }
             
-            displayController.CreateDisplay(displayPrefab);
             //displayController.displayActive = true;
         }
         else

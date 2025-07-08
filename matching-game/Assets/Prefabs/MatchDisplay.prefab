@@ -90,8 +90,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   matchDisplay: {fileID: 7909668671520739012}
+  matchDisplayText: {fileID: 5725671260416261543}
   displayController: {fileID: 0}
   displaySprite: {fileID: 0}
+  displayText: 
 --- !u!1 &7654239438530976883
 GameObject:
   m_ObjectHideFlags: 0

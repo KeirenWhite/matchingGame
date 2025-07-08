@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -32,7 +33,7 @@ public class DisplayController : MonoBehaviour
             // add matchdisplay sprite here
         }
     }
-    public MatchDisplay CreateDisplay(GameObject display)
+    public MatchDisplay CreateDisplay(Sprite sprite, string text)
     {
         /*for (int i = 0; i < displayList.Count; i++)
         {
@@ -43,7 +44,8 @@ public class DisplayController : MonoBehaviour
         }*/
         
         currentDisplay = Instantiate(displayPrefab, displayGridTransform);
-        currentDisplay.SetDisplaySprite(displaySprites[0]);
+        currentDisplay.SetDisplaySprite(sprite);
+        currentDisplay.SetDisplayText(text);
         currentDisplay.displayController = this;
         
         
@@ -51,8 +53,8 @@ public class DisplayController : MonoBehaviour
         Continue();
 
         return currentDisplay;
-        
-       
+
+
         
         
 
