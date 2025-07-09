@@ -16,7 +16,7 @@ public class DisplayController : MonoBehaviour
     public Button continueButtonPrefab;
     public Transform continueButtonTransform;
     public bool displayActive = false;
-    private MatchDisplay currentDisplay;
+    [HideInInspector] public MatchDisplay currentDisplay;
     private void Start()
     {
         //PrepareDisplays();

@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>My Unity WebGL Game</title>
-  <style>
-    html, body {
-      margin: 0;
-      background: black;
-      height: 100%;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    canvas {
-      width: 1920px;
-      height: 1080px;
-      display: block;
-    }
-  </style>
+    <meta charset="utf-8" />
+    <title>{{{ PRODUCT_NAME }}}</title>
+    <style>
+        html, body {
+            margin: 0;
+            background: black; /* background color is black for borders */
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        canvas {
+            width: 1920px; /* half of 1920 for example */
+            height: 1080px; /* half of 1080 */
+            image-rendering: pixelated; /* optional for crisp pixels */
+        }
+    </style>
 </head>
 <body>
-  <div id="unityContainer">
     <canvas id="unity-canvas"></canvas>
-  </div>
-  <script src="Build/{{{ UNITY_LOADER_FILENAME }}}"></script>
-  <script>
+    <script src="Build/{{{ LOADER_FILENAME }}}"></script>
+    <script>
     createUnityInstance(document.querySelector("#unity-canvas"), {
       dataUrl: "Build/{{{ DATA_FILENAME }}}",
       frameworkUrl: "Build/{{{ FRAMEWORK_FILENAME }}}",
@@ -35,6 +34,6 @@
       productName: "{{{ PRODUCT_NAME }}}",
       productVersion: "{{{ PRODUCT_VERSION }}}"
     });
-  </script>
+    </script>
 </body>
 </html>
