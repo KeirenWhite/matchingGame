@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class DisplayController : MonoBehaviour
 {
     [SerializeField] MatchDisplay displayPrefab;
-    [SerializeField] Sprite[] displaySprites;
+    Sprite[] displaySprites;
     [SerializeField] Transform displayGridTransform;
     [SerializeField] Transform displayTransform;
     private List<Sprite> displayList;
