@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class DynamicCanvasScaling : MonoBehaviour
 {
     public CanvasScaler scaler;
+    public GameObject companyLogo;
 
     private void FixedUpdate()
     {
@@ -14,10 +15,17 @@ public class DynamicCanvasScaling : MonoBehaviour
         if (aspectRatio < 1f)
         {         
             scaler.matchWidthOrHeight = .5f;
+            //companyLogo.SetActive(true);
+        }
+        else if (aspectRatio >= 3f)
+        {
+            scaler.matchWidthOrHeight = 0f;
+            //companyLogo.SetActive(false);
         }
         else
         {
             scaler.matchWidthOrHeight = 0f;
+            //companyLogo.SetActive(true);
         }
     }
 }

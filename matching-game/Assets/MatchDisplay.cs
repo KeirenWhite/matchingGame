@@ -22,6 +22,7 @@ public class MatchDisplay : MonoBehaviour
     {
         matchDisplayText.text = text;
     }
+
     /*public void ShowDisplay()
     {
         matchDisplay.sprite = displaySprite;
