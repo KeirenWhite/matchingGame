@@ -17,6 +17,7 @@ public class DisplayController : MonoBehaviour
     public Transform continueButtonTransform;
     public bool displayActive = false;
     [HideInInspector] public MatchDisplay currentDisplay;
+    public EndGame endGame;
     private void Start()
     {
         //PrepareDisplays();
@@ -28,8 +29,7 @@ public class DisplayController : MonoBehaviour
         displayList = new List<Sprite>();
 
         for (int i = 0; i < displaySprites.Length; i++)
-        {
-            // adding sprite 2 times to make it a pair
+        {          
             displayList.Add(displaySprites[i]);
             // add matchdisplay sprite here
         }
@@ -43,13 +43,14 @@ public class DisplayController : MonoBehaviour
             dsp.displayController = this;
             //dsp.ShowDisplay();
         }*/
+
         
         currentDisplay = Instantiate(displayPrefab, displayGridTransform);
         currentDisplay.SetDisplaySprite(sprite);
         currentDisplay.SetDisplayText(text);
         currentDisplay.displayController = this;
-        
-        
+        endGame.matchesLeft -= 2;
+
         ogCanvas.SetActive(false);
         Continue();
 
@@ -76,6 +77,8 @@ public class DisplayController : MonoBehaviour
         continueButton.onClick.AddListener(() =>
         {
             Resume();
+            endGame.EndTheGame();
+
             Destroy(continueButton.gameObject);
         });
         

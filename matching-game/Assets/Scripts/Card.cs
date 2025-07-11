@@ -11,6 +11,7 @@ public class Card : MonoBehaviour
     public Sprite hiddenIconSprite;
     public Sprite iconSprite;
     public CardsController controller;
+    //public EndGame endGame;
 
     public void OnCardClick()
     {
@@ -23,6 +24,7 @@ public class Card : MonoBehaviour
     public void SetIconSprite(Sprite sp)
     {
         iconSprite = sp;
+        //endGame.matchesLeft++;
     }
 
     public void Show()

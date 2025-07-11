@@ -260,7 +260,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -29, y: -404}
+  m_AnchoredPosition: {x: -29, y: -422}
   m_SizeDelta: {x: 594, y: -484}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &122269271
@@ -334,7 +334,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3, y: -176}
+  m_AnchoredPosition: {x: 3, y: -211}
   m_SizeDelta: {x: 650, y: 490}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &155838663
@@ -575,9 +575,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 588bf126116d36843a7b535836073b68, type: 3}
   - {fileID: 21300000, guid: 1d8b9743869c25344ae0f622cd80fa14, type: 3}
   - {fileID: 21300000, guid: 87547b592a25cd34d9e8fc96fcfbbd11, type: 3}
-  - {fileID: 21300000, guid: 87547b592a25cd34d9e8fc96fcfbbd11, type: 3}
-  - {fileID: 21300000, guid: 87547b592a25cd34d9e8fc96fcfbbd11, type: 3}
-  - {fileID: 21300000, guid: 87547b592a25cd34d9e8fc96fcfbbd11, type: 3}
   displayController: {fileID: 2006154463}
   displayPrefab: {fileID: 61112064181124592, guid: d0bfb8db8c175c8429459eb99a4057a2, type: 3}
   spriteDisplayPairs:
@@ -585,25 +582,21 @@ MonoBehaviour:
     matchDisplay: {fileID: 21300000, guid: 5c7f794f2379f9c44bc376348b286a9a, type: 3}
     matchText: 
   - cardIcon: {fileID: 21300000, guid: e124e5c617bbce14d929b2d4b54c5dc4, type: 3}
-    matchDisplay: {fileID: 21300000, guid: 5c7f794f2379f9c44bc376348b286a9a, type: 3}
-    matchText: 
-  - cardIcon: {fileID: 21300000, guid: 87547b592a25cd34d9e8fc96fcfbbd11, type: 3}
     matchDisplay: {fileID: 21300000, guid: 052caaabf16e2554381671306aebff2e, type: 3}
     matchText: 
+  - cardIcon: {fileID: 21300000, guid: 87547b592a25cd34d9e8fc96fcfbbd11, type: 3}
+    matchDisplay: {fileID: 21300000, guid: 5406d6575f0c30948ac162599ad8011f, type: 3}
+    matchText: 
   - cardIcon: {fileID: 21300000, guid: e97d2e86ed7720d43997de2844be5f48, type: 3}
-    matchDisplay: {fileID: 21300000, guid: 3d602089522a47b48a496494d05b9d11, type: 3}
-    matchText: "Gorilla Tag is a breakout hit for a reason. Its unique movement\u2014using
-      only your arms\u2014makes it instantly engaging and incredibly fun. There are
-      no buttons to learn, so anyone can jump in and start playing. The social, fast-paced
-      tag gameplay creates endless laughs, intense chases, and genuine connections.
-      It\u2019s active, chaotic, and wildly replayable\u2014perfect for players of
-      all ages."
+    matchDisplay: {fileID: 21300000, guid: f0ec908be8582a0468ab887b8e215f3f, type: 3}
+    matchText: 
   - cardIcon: {fileID: 21300000, guid: 1d8b9743869c25344ae0f622cd80fa14, type: 3}
-    matchDisplay: {fileID: 21300000, guid: 5c7f794f2379f9c44bc376348b286a9a, type: 3}
+    matchDisplay: {fileID: 21300000, guid: 9e5bd4be063b2ce4292468a2ca061767, type: 3}
     matchText: 
   - cardIcon: {fileID: 21300000, guid: 588bf126116d36843a7b535836073b68, type: 3}
-    matchDisplay: {fileID: 21300000, guid: 5c7f794f2379f9c44bc376348b286a9a, type: 3}
+    matchDisplay: {fileID: 21300000, guid: 9119b9a0bd19a9f4f9cde1005170decd, type: 3}
     matchText: 
+  endGame: {fileID: 1712978773}
 --- !u!4 &739501542
 Transform:
   m_ObjectHideFlags: 0
@@ -893,6 +886,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 73185844}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1712978772
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1712978774}
+  - component: {fileID: 1712978773}
+  m_Layer: 0
+  m_Name: EndGameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1712978773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1712978772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32dcd82b0a73b9e41809eb1c92259a11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  matchesLeft: 0
+--- !u!4 &1712978774
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1712978772}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.3954115, y: -1.0834081, z: 2775.9412}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1900025158
 GameObject:
   m_ObjectHideFlags: 0
@@ -990,6 +1028,7 @@ MonoBehaviour:
   continueButtonTransform: {fileID: 122269270}
   displayActive: 0
   currentDisplay: {fileID: 0}
+  endGame: {fileID: 1712978773}
 --- !u!4 &2006154464
 Transform:
   m_ObjectHideFlags: 0
@@ -1189,3 +1228,4 @@ SceneRoots:
   - {fileID: 739501542}
   - {fileID: 73185844}
   - {fileID: 2006154464}
+  - {fileID: 1712978774}

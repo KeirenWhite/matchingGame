@@ -24,6 +24,7 @@ public class CardsController : MonoBehaviour
     public GameObject displayPrefab;
     private List<Sprite> spritePairs;
     public List<SpriteMatchDisplayPair> spriteDisplayPairs;
+    public EndGame endGame;
     
 
     Card firstSelected;
@@ -56,6 +57,7 @@ public class CardsController : MonoBehaviour
             Card card = Instantiate(cardPrefab, gridTransform, false);
             //LayoutRebuilder.ForceRebuildLayoutImmediate(gridLayoutObject.GetComponent<RectTransform>());
             card.SetIconSprite(spritePairs[i]);
+            endGame.matchesLeft++;
             card.controller = this;
         }
     }
@@ -64,8 +66,10 @@ public class CardsController : MonoBehaviour
     {
         foreach (var pair in spriteDisplayPairs)
         {
+            
             if (pair.cardIcon == icon)
             {
+                
                 return pair.matchDisplay;
             }
         }
@@ -117,10 +121,12 @@ public class CardsController : MonoBehaviour
             //matchDsp.ShowDisplay();
             Sprite displaySprite = GetDisplaySpriteForIcon(a.iconSprite);
             string displayText = GetDisplayTextForIcon(a.iconSprite);
-             
+            
+
             if (displaySprite != null)
             {
                 displayController.CreateDisplay(displaySprite, displayText);
+                
             }
             
             //displayController.displayActive = true;
