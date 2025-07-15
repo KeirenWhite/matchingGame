@@ -25,7 +25,7 @@ public class CardsController : MonoBehaviour
     private List<Sprite> spritePairs;
     public List<SpriteMatchDisplayPair> spriteDisplayPairs;
     public EndGame endGame;
-    
+    public ScoreSystem score;
 
     Card firstSelected;
     Card secondSelected;
@@ -121,6 +121,8 @@ public class CardsController : MonoBehaviour
             //matchDsp.ShowDisplay();
             Sprite displaySprite = GetDisplaySpriteForIcon(a.iconSprite);
             string displayText = GetDisplayTextForIcon(a.iconSprite);
+            score.matchCounter++;
+            score.ScoreMultiplier();
             
 
             if (displaySprite != null)
@@ -135,6 +137,8 @@ public class CardsController : MonoBehaviour
         {
             a.Hide();
             b.Hide();
+            score.matchCounter = 0f;
+            score.scoreMult = 1f;
         }
     }
 

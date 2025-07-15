@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class ReturnButton : MonoBehaviour
 {
     public Button returnButton;
+    public ScoreSystem score;
     private void Start()
     {
         RestartGame();
@@ -15,6 +16,7 @@ public class ReturnButton : MonoBehaviour
     {
         returnButton.onClick.AddListener(() =>
         {
+            score.score = 0f;
             NextScene("StartScreen");
         });
     }
