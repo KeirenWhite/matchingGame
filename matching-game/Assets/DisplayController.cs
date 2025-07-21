@@ -18,6 +18,8 @@ public class DisplayController : MonoBehaviour
     public bool displayActive = false;
     [HideInInspector] public MatchDisplay currentDisplay;
     public EndGame endGame;
+    public AudioSource audioSource;
+    public AudioSource buttonAuidoSource;
     private void Start()
     {
         //PrepareDisplays();
@@ -50,6 +52,7 @@ public class DisplayController : MonoBehaviour
         currentDisplay.SetDisplayText(text);
         currentDisplay.displayController = this;
         endGame.matchesLeft -= 2;
+        audioSource.Play();
 
         ogCanvas.SetActive(false);
         Continue();
@@ -76,6 +79,7 @@ public class DisplayController : MonoBehaviour
         Button continueButton = Instantiate(continueButtonPrefab, continueButtonTransform);
         continueButton.onClick.AddListener(() =>
         {
+            buttonAuidoSource.Play();
             Resume();
             endGame.EndTheGame();
 

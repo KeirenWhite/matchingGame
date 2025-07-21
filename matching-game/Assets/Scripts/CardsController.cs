@@ -26,6 +26,7 @@ public class CardsController : MonoBehaviour
     public List<SpriteMatchDisplayPair> spriteDisplayPairs;
     public EndGame endGame;
     public ScoreSystem score;
+    public AudioSource audioSource;
 
     Card firstSelected;
     Card secondSelected;
@@ -94,6 +95,7 @@ public class CardsController : MonoBehaviour
         if(card.isSelected == false)
         {
             card.Show();
+            audioSource.Play();
 
             if (firstSelected == null) 
             {
@@ -137,6 +139,7 @@ public class CardsController : MonoBehaviour
         {
             a.Hide();
             b.Hide();
+            audioSource.Play();
             score.matchCounter = 0f;
             score.scoreMult = 1f;
         }

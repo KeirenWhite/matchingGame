@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class StartButton : MonoBehaviour
 {
     public Button startButton;
+    public AudioSource audioSource;
     private void Start()
     {
         StartGame();
@@ -15,6 +16,7 @@ public class StartButton : MonoBehaviour
     {
         startButton.onClick.AddListener(() =>
         {
+            audioSource.Play();
             NextScene("GameScene");
         });
     }
