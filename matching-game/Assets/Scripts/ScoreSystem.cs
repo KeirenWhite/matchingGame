@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class ScoreSystem : MonoBehaviour
 {
     public float score = 0f;
-    public float matchCounter = 0;
+    public float matchCounter = 0f;
     public float scoreMult = 1.0f;
     public float baseScore = 10f;
     public float currentScoreMult;
@@ -31,13 +31,18 @@ public class ScoreSystem : MonoBehaviour
 
     public void ScoreMultiplier()
     {
-        if (matchCounter == 0)
+        currentScoreMult = 1f;
+        if (matchCounter == 0f)
         {
             currentScoreMult = 1f;
         }
-        else
+        else if (matchCounter == 1f)
         {
-            currentScoreMult = (scoreMult *= matchCounter);
+            currentScoreMult = 1f;
+        }
+        else 
+        {
+            currentScoreMult = matchCounter;
         }
        
         score += (baseScore * currentScoreMult);
