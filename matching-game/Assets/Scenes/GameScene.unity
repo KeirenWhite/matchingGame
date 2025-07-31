@@ -2098,6 +2098,7 @@ MonoBehaviour:
   endGame: {fileID: 1712978773}
   audioSource: {fileID: 2006154465}
   buttonAuidoSource: {fileID: 2006154466}
+  gradient: {fileID: 718918659}
 --- !u!4 &2006154464
 Transform:
   m_ObjectHideFlags: 0

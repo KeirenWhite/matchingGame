@@ -20,6 +20,7 @@ public class DisplayController : MonoBehaviour
     public EndGame endGame;
     public AudioSource audioSource;
     public AudioSource buttonAuidoSource;
+    public GameObject gradient;
     private void Start()
     {
         //PrepareDisplays();
@@ -55,6 +56,7 @@ public class DisplayController : MonoBehaviour
         audioSource.Play();
 
         ogCanvas.SetActive(false);
+        gradient.SetActive(false);
         Continue();
 
         return currentDisplay;
@@ -90,6 +92,7 @@ public class DisplayController : MonoBehaviour
 
     public void Resume()
     {
+        gradient.SetActive(true);
         ogCanvas.SetActive(true);
         DestroyDisplay();
         //displayActive = false;
