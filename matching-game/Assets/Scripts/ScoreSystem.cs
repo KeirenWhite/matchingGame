@@ -47,4 +47,5 @@ public class ScoreSystem : MonoBehaviour
        
         score += (baseScore * currentScoreMult);
     }
+
 }
