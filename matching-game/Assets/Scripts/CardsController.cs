@@ -45,7 +45,7 @@ public class CardsController : MonoBehaviour
             // adding sprite 2 times to make it a pair
             spritePairs.Add(sprites[i]);
             spritePairs.Add(sprites[i]);
-            // add matchdisplay sprite here
+            
         }
 
         ShuffleSprites(spritePairs);
@@ -118,9 +118,7 @@ public class CardsController : MonoBehaviour
         yield return new WaitForSeconds(.3f);
         if (a.iconSprite == b.iconSprite)
         {
-            // Matched
-            // show matchdisplay spire that = a or b
-            //matchDsp.ShowDisplay();
+            
             Sprite displaySprite = GetDisplaySpriteForIcon(a.iconSprite);
             string displayText = GetDisplayTextForIcon(a.iconSprite);
             score.matchCounter++;
@@ -151,7 +149,7 @@ public class CardsController : MonoBehaviour
         {
             int randomIndex = Random.Range(0, i + 1);
 
-            // Swap the elements at i and randomIndex
+            
             Sprite temp = spriteList[i];
             spriteList[i] = spriteList[randomIndex];
             spriteList[randomIndex] = temp;
