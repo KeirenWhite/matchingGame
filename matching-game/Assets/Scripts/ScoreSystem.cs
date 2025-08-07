@@ -24,8 +24,8 @@ public class ScoreSystem : MonoBehaviour
 
     public void UpdateCounterDisplay()
     {
-        scoreText.text = string.Format("Score: {0}", score);
-        streakText.text = string.Format("Streak: {0}", matchCounter);
+        scoreText.text = string.Format("SCORE: {0}", score);
+        streakText.text = string.Format("STREAK: {0}", matchCounter);
         endScoreText.text = string.Format("{0}", score);
     }
 
