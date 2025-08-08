@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class ScoreSystem : MonoBehaviour
 {
@@ -14,6 +15,14 @@ public class ScoreSystem : MonoBehaviour
     public TMP_Text scoreText;
     public TMP_Text streakText;
     public TMP_Text endScoreText;
+    public ScoreMultiplierButton scoreMultiplierButton;
+
+   
+
+    void Start()
+    {
+        EventSystem.current.SetSelectedGameObject(null);
+    }
 
     private void FixedUpdate()
     {
@@ -44,8 +53,17 @@ public class ScoreSystem : MonoBehaviour
         {
             currentScoreMult = matchCounter;
         }
-       
-        score += (baseScore * currentScoreMult);
+
+        if (scoreMultiplierButton.multButtonSelected)
+        {
+            score += (baseScore * currentScoreMult) * 2;
+            scoreMultiplierButton.multButtonSelected = false;
+            //scoreMultiplierButton.multButton.gameObject.SetActive(false);
+        }
+        else
+        {
+            score += (baseScore * currentScoreMult);
+        }      
     }
 
 }

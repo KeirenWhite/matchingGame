@@ -118,19 +118,20 @@ public class CardsController : MonoBehaviour
         yield return new WaitForSeconds(.3f);
         if (a.iconSprite == b.iconSprite)
         {
-            
+            TagAllCardsWithSprite(a.iconSprite);
             Sprite displaySprite = GetDisplaySpriteForIcon(a.iconSprite);
             string displayText = GetDisplayTextForIcon(a.iconSprite);
             score.matchCounter++;
             score.ScoreMultiplier();
             
 
+
+
             if (displaySprite != null)
             {
                 displayController.CreateDisplay(displaySprite, displayText);
                 
-            }
-            
+            }          
             //displayController.displayActive = true;
         }
         else
@@ -155,4 +156,46 @@ public class CardsController : MonoBehaviour
             spriteList[randomIndex] = temp;
         }
     }
+
+    public GameObject TagAllCardsWithSprite(Sprite matchedSprite)
+    {
+        Card[] allCards = FindObjectsOfType<Card>();
+
+        foreach (Card card in allCards)
+        {
+            if (card.iconSprite == matchedSprite)
+            {
+                card.gameObject.tag = "Matched";
+            }
+        }
+
+        return null;
+    }
+
+    public void ShowAllCards()
+    {
+        Card[] allCards = FindObjectsOfType<Card>();
+
+        foreach (Card card in allCards)
+        {
+            if (card.gameObject.tag != "Matched")
+            {
+                card.Show();
+            }
+        }
+    }
+
+    public void HideAllCards()
+    {
+        Card[] allCards = FindObjectsOfType<Card>();
+
+        foreach (Card card in allCards)
+        {
+            if (card.gameObject.tag != "Matched")
+            {
+                card.Hide();
+            }
+        }
+    }
+
 }

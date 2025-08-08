@@ -51,4 +51,6 @@ public class Card : MonoBehaviour
         //iconImage.sprite = hiddenIconSprite;
         //isSelected = false;
     }
+
+    
 }
