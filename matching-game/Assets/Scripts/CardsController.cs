@@ -178,9 +178,10 @@ public class CardsController : MonoBehaviour
 
         foreach (Card card in allCards)
         {
-            if (card.gameObject.tag != "Matched")
+            if (card.gameObject.tag != "Matched" && !card.isSelected)
             {
-                card.Show();
+                card.ShowAll();
+                audioSource.Play();
             }
         }
     }
@@ -191,9 +192,10 @@ public class CardsController : MonoBehaviour
 
         foreach (Card card in allCards)
         {
-            if (card.gameObject.tag != "Matched")
+            if (card.gameObject.tag != "Matched" && !card.isSelected)
             {
                 card.Hide();
+                audioSource.Play();
             }
         }
     }

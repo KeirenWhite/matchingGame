@@ -51,7 +51,7 @@ public class ScoreSystem : MonoBehaviour
         }
         else 
         {
-            currentScoreMult = matchCounter;
+            currentScoreMult = (matchCounter * 1.5f);
         }
 
         if (scoreMultiplierButton.multButtonSelected)

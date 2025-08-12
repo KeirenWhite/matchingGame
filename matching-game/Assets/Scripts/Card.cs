@@ -51,6 +51,14 @@ public class Card : MonoBehaviour
         //iconImage.sprite = hiddenIconSprite;
         //isSelected = false;
     }
+    public void ShowAll()
+    {
+        Tween.Rotation(transform, new Vector3(0f, 180f, 0f), .2f);
 
-    
+        Tween.Delay(.1f, () => iconImage.sprite = iconSprite);
+
+        //iconImage.sprite = iconSprite;
+        
+    }
+
 }
