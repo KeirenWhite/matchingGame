@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class ReturnButton : MonoBehaviour
 {
     public Button returnButton;
-    public ScoreSystem score;
+    //public ScoreSystem score;
     public AudioSource audioSource;
     private void Start()
     {
@@ -18,7 +18,7 @@ public class ReturnButton : MonoBehaviour
         returnButton.onClick.AddListener(() =>
         {
             audioSource.Play();
-            score.score = 0f;
+            //score.score = 0f;
             NextScene("StartScreen");
         });
     }

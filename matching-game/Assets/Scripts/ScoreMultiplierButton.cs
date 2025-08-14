@@ -7,6 +7,7 @@ public class ScoreMultiplierButton : MonoBehaviour
     public ScoreSystem scoreSystem;
     public Button multButton;
     public bool multButtonSelected = false;
+    public AudioSource audioSource;
 
     public void Awake()
     {
@@ -22,6 +23,7 @@ public class ScoreMultiplierButton : MonoBehaviour
             if (!multButtonSelected)
             {
                 multButtonSelected = true;
+                audioSource.Play();
                 multButton.gameObject.SetActive(false);
             }
             /*else
